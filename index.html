@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+# Updating the HTML to include a section for Linux distribution logos
+html_content_with_logos = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,10 +63,10 @@
         .pricing h3 {
             margin-top: 0;
         }
-        .faq, .contact-info, .testimonials {
+        .faq, .contact-info, .testimonials, .linux-logos {
             margin-top: 30px;
         }
-        .faq p, .contact-info p, .testimonials p {
+        .faq p, .contact-info p, .testimonials p, .linux-logos p {
             text-align: center;
         }
         .footer {
@@ -91,6 +92,17 @@
         }
         .testimonial p {
             font-style: italic;
+        }
+        .linux-logos {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .linux-logos img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -128,6 +140,18 @@
             </div>
         </div>
 
+        <section class="linux-logos">
+            <h2 class="section-title">Our Supported Linux Distributions</h2>
+            <div class="linux-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Ubuntu_logo_2021.svg" alt="Ubuntu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Linux_Mint_logo.svg" alt="Linux Mint">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Pop!_OS_logo.svg" alt="Pop!_OS">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Arch_Linux_logo.svg" alt="Arch Linux">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Fedora_logo.svg" alt="Fedora">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Debian_logo_2019.svg" alt="Debian">
+            </div>
+        </section>
+
         <section class="testimonials">
             <h2 class="section-title">What Our Clients Say</h2>
             <div class="testimonial">
@@ -164,3 +188,12 @@
     </div>
 </body>
 </html>
+"""
+
+# Save the updated HTML content with logos section
+final_with_logos_path = "/mnt/data/linux-ready-with-logos.zip"
+
+with zipfile.ZipFile(final_with_logos_path, "w") as zipf:
+    zipf.writestr("index.html", html_content_with_logos)
+
+final_with_logos_path
