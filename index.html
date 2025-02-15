@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux-Ready.nl - Stap vandaag nog over op Linux</title>
+    <meta name="description" content="Maak de overstap naar Linux simpel en snel. Wij bieden professionele installatie services voor jouw laptop of PC. Kies uit verschillende Linux distributies en geniet van een sneller en veiliger besturingssysteem.">
+    <meta name="keywords" content="Linux, installatie, service, laptop, PC, Windows, Ubuntu, Mint, Pop_OS, dual boot, veiligheid, snelheid">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,24 +14,33 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background-color: #222;
             color: white;
             text-align: center;
             padding: 40px 0;
-            background-image: url('DALL·E 2025-02-15 15.36.18 - A sleek, modern, professional home office setup with a calm and inviting atmosphere. A person is working on a laptop, surrounded by minimalistic decor.webp'); /* Example background */
+            background-image: url('DALL·E 2025-02-15 15.36.18 - A sleek, modern, professional home office setup with a calm and inviting atmosphere. A person is working on a laptop, surrounded by minimalistic decor.webp');
             background-size: cover;
             background-position: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
         }
+
         header h1 {
             font-size: 3rem;
             margin-bottom: 10px;
         }
+
         header p {
             font-size: 1.25rem;
             margin-bottom: 20px;
         }
+
         .cta-button {
             background-color: #FF5733;
             color: white;
@@ -40,10 +51,13 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+            margin-top: 20px;
         }
+
         .cta-button:hover {
             background-color: #FF4511;
         }
+
         .container {
             max-width: 900px;
             margin: 20px auto;
@@ -52,17 +66,51 @@
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         }
+
         .section-title {
             text-align: center;
             font-size: 2rem;
             margin-top: 30px;
         }
+
+        .order-options {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            gap: 20px; /* Added gap for spacing */
+        }
+
+        .order-option {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 30%; /* Set a width for better responsiveness */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+        }
+
+        .order-option:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-option img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        /* ... (Rest of your existing CSS styles) ... */
+
         .pricing {
             display: flex;
             justify-content: space-around;
             margin: 30px 0;
             gap: 20px;
         }
+
         .pricing div {
             background: #e0e0e0;
             padding: 20px;
@@ -71,91 +119,39 @@
             width: 30%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         .pricing div:hover {
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-        .pricing h3 {
-            margin-top: 0;
-        }
-        .faq, .testimonials, .linux-logos {
-            margin-top: 30px;
-        }
-        .faq p, .testimonials p, .linux-logos p {
-            text-align: center;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-            margin-top: 40px;
-        }
-        .why-linux {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .testimonial {
-            background-color: #f9f9f9;
-            border-left: 4px solid #FF5733;
-            margin-bottom: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .testimonial h3 {
-            font-size: 1.25rem;
-        }
-        .testimonial p {
-            font-style: italic;
-        }
-        .faq-item {
-            margin-top: 10px;
-            padding: 10px;
-            background: #f0f0f0;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .faq-item:hover {
-            background: #e0e0e0;
-        }
-        .faq-answer {
-            display: none;
-            margin-top: 10px;
-            padding-left: 20px;
-            font-size: 1rem;
-        }
-        .linux-logos {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        .linux-logos img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            transition: transform 0.3s;
-        }
-        .linux-logos img:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Welkom bij Linux-Ready.nl!</h1>
+        <p>Is je laptop langzaam? Heb je een oude pc liggen die je nieuw leven wilt inblazen? Of ben je gewoon klaar om Windows achter je te laten? Wij maken de overstap naar Linux simpel, snel en probleemloos. Met onze professionele installatie-service heb je je apparaat in no time klaar voor gebruik, vol met alle tools die je nodig hebt.</p>
         <a href="#services" class="cta-button">Start nu je Linux avontuur!</a>
     </header>
 
     <div class="container">
-        <section class="why-linux">
-            <h2 class="section-title">Waarom overstappen naar Linux?</h2>
-            <ul>
-                <li>- Geen verplichte updates of vertragingen</li>
-                <li>- Veiliger en privéder dan Windows</li>
-                <li>- Perfect voor dagelijks gebruik en gamen</li>
-            </ul>
+        <section id="order" class="order">
+            <h2 class="section-title">Hoe Bestellen?</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <img src="bring-laptop.png" alt="Breng Laptop">
+                    <h3>Breng je laptop langs</h3>
+                    <p>Kom langs op onze locatie en we installeren Linux terwijl je wacht.</p>
+                </div>
+                <div class="order-option">
+                    <img src="pickup.png" alt="Ophaalservice">
+                    <h3>Ophaalservice</h3>
+                    <p>We halen je laptop op en brengen hem terug met Linux geïnstalleerd.</p>
+                </div>
+                <div class="order-option">
+                    <img src="send-laptop.png" alt="Stuur Laptop">
+                    <h3>Stuur je laptop op</h3>
+                    <p>Stuur je laptop naar ons op en we sturen hem terug met Linux geïnstalleerd.</p>
+                </div>
+            </div>
         </section>
 
         <section id="services" class="services">
@@ -179,56 +175,7 @@
             </div>
         </section>
 
-        <section class="linux-logos">
-            <h2 class="section-title">Onze Ondersteunde Linux Distributies</h2>
-            <div class="linux-logos">
-                <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="Ubuntu">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_Linux_Mint_Logo.svg/1280px-The_Linux_Mint_Logo.svg.png" alt="Linux Mint">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pop_OS-Logo-nobg.svg/1280px-Pop_OS-Logo-nobg.svg.png" alt="Pop!_OS">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Archlinux-logo-standard-version.svg" alt="Arch Linux">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Fedora_logo_%282021%29.svg/1280px-Fedora_logo_%282021%29.svg.png" alt="Fedora">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/1024px-Debian-OpenLogo.svg.png" alt="Debian">
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2 class="section-title">Wat Onze Klanten Zeggen</h2>
-            <div class="testimonial">
-                <h3>John Doe</h3>
-                <p>"De overstap naar Linux was veel gemakkelijker dan ik had verwacht. Mijn laptop werkt nu sneller dan ooit!"</p>
-            </div>
-            <div class="testimonial">
-                <h3>Jane Smith</h3>
-                <p>"De service was geweldig. Mijn laptop draait veel beter en ik voel me veel veiliger. Zeer aanbevolen!"</p>
-            </div>
-            <div class="testimonial">
-                <h3>Mark Johnson</h3>
-                <p>"Ik koos voor de dual boot setup en het is perfect! Ik kan nu zowel Linux voor werk als Windows voor games gebruiken!"</p>
-            </div>
-        </section>
-
-        <section class="faq">
-            <h2 class="section-title">Veelgestelde Vragen</h2>
-            <div class="faq-item">
-                <strong>Is mijn laptop compatibel met Linux?</strong>
-                <div class="faq-answer">De meeste moderne laptops zijn compatibel met Linux, en we controleren graag je specificaties voor de installatie.</div>
-            </div>
-            <div class="faq-item">
-                <strong>Kan ik Windows nog steeds gebruiken na de installatie?</strong>
-                <div class="faq-answer">Ja! Bij een dual-boot setup kun je kiezen tussen Windows en Linux bij het opstarten van je laptop.</div>
-            </div>
-            <div class="faq-item">
-                <strong>Wat gebeurt er met mijn bestanden?</strong>
-                <div class="faq-answer">Je bestanden blijven veilig, vooral als je kiest voor een dual-boot. Beide besturingssystemen delen de gegevenspartities.</div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-info">
-            <h2 class="section-title">Neem Contact Op</h2>
-            <p>📩 E-mail: contact@linux-ready.nl</p>
-            <p>📞 WhatsApp: +31 XXXXXXXX</p>
-        </section>
-    </div>
+        </div>
 
     <div class="footer">
         <p>© 2025 Linux-Ready.nl - Jouw Linux Migratie Expert</p>
