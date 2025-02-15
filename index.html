@@ -6,121 +6,163 @@
     <title>Linux-Ready.nl - Stap vandaag nog over op Linux</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
-            background-color: #222;
+            background-color: #4CAF50;
             color: white;
             text-align: center;
             padding: 40px 0;
+            font-size: 24px;
+            font-weight: bold;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             padding: 20px;
             background: white;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            text-align: center;
-        }
+
         .cta-button {
-            background-color: #0066cc;
+            background-color: #ff7f50;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
+
         .cta-button:hover {
-            background-color: #005bb5;
+            background-color: #ff6347;
         }
-        .section-title {
+
+        h2 {
             text-align: center;
-            margin-top: 40px;
-            font-size: 24px;
+            margin-top: 20px;
+            color: #4CAF50;
         }
+
         .pricing {
             display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-        }
-        .pricing div {
-            background: #ddd;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            width: 30%;
-        }
-        .pricing h3 {
-            margin-top: 0;
-        }
-        .faq, .contact-info, .testimonials, .linux-logos {
-            margin-top: 30px;
-        }
-        .faq p, .contact-info p, .testimonials p, .linux-logos p {
-            text-align: center;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background: #222;
-            color: white;
+            justify-content: space-evenly;
             margin-top: 20px;
         }
-        .why-linux {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 5px;
+
+        .pricing div {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .testimonial {
-            background-color: #f9f9f9;
-            border-left: 4px solid #0066cc;
-            margin-bottom: 20px;
+
+        .pricing h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .faq {
+            margin-top: 30px;
+        }
+
+        .faq p {
+            cursor: pointer;
             padding: 15px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
         }
+
+        .faq p:hover {
+            background-color: #ddd;
+        }
+
+        .faq-content {
+            display: none;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .testimonial {
+            display: none;
+            background-color: #f9f9f9;
+            border-left: 4px solid #ff7f50;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
         .testimonial h3 {
-            font-size: 18px;
+            font-size: 20px;
+            color: #333;
         }
+
         .testimonial p {
             font-style: italic;
+            color: #666;
         }
+
+        .testimonial.active {
+            display: block;
+        }
+
         .linux-logos {
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
             gap: 20px;
+            margin-top: 30px;
         }
+
         .linux-logos img {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            margin-top: 30px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welkom bij Linux-Ready.nl!</h1>
-        <p>Heb je een oude pc liggen die je nieuw leven wilt inblazen, of wil je wat anders dan Windows proberen? Wij helpen je de overstap naar Linux soepel en gemakkelijk te maken. Onze professionele installatie-service zorgt ervoor dat je apparaat klaar is voor gebruik, met alle benodigde tools en software voor je dagelijkse taken. Of je nu nieuw bent in Linux of een power user, wij hebben de juiste oplossing voor jou!</p>
-        <a href="#services" class="cta-button">Start nu</a>
+        Welkom bij Linux-Ready.nl!<br>
+        Stap vandaag nog over op Linux en ontdek de voordelen!
     </header>
 
     <div class="container">
         <section class="why-linux">
-            <h2 class="section-title">Waarom overstappen naar Linux?</h2>
+            <h2>Waarom overstappen naar Linux?</h2>
             <p>- Geen verplichte updates of vertragingen</p>
             <p>- Veiliger en privéder dan Windows</p>
             <p>- Perfect voor dagelijks gebruik en gamen</p>
         </section>
 
-        <h2 class="section-title" id="services">Onze Diensten</h2>
+        <h2 id="services">Onze Diensten</h2>
         <div class="pricing">
             <div>
                 <h3>Basis Installatie</h3>
@@ -139,21 +181,32 @@
             </div>
         </div>
 
-        <section class="linux-logos">
-            <h2 class="section-title">Onze Ondersteunde Linux Distributies</h2>
-            <div class="linux-logos">
-                <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="Ubuntu">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_Linux_Mint_Logo.svg/1280px-The_Linux_Mint_Logo.svg.png" alt="Linux Mint">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pop_OS-Logo-nobg.svg/1280px-Pop_OS-Logo-nobg.svg.png" alt="Pop!_OS">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Archlinux-logo-standard-version.svg" alt="Arch Linux">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Fedora_logo_%282021%29.svg/1280px-Fedora_logo_%282021%29.svg.png" alt="Fedora">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/1024px-Debian-OpenLogo.svg.png" alt="Debian">
+        <section class="faq">
+            <h2>Veelgestelde Vragen</h2>
+            <p onclick="toggleAnswer(0)">Is mijn laptop compatibel met Linux?</p>
+            <div id="faq-0" class="faq-content">
+                <p>De meeste moderne laptops zijn compatibel met Linux. We controleren de specificaties van je laptop voor de installatie.</p>
+            </div>
+
+            <p onclick="toggleAnswer(1)">Kan ik Windows nog steeds gebruiken na de installatie?</p>
+            <div id="faq-1" class="faq-content">
+                <p>Ja, als je kiest voor een dual-boot setup, kun je bij het opstarten van je laptop kiezen tussen Linux en Windows.</p>
+            </div>
+
+            <p onclick="toggleAnswer(2)">Wat gebeurt er met mijn bestanden?</p>
+            <div id="faq-2" class="faq-content">
+                <p>Je bestanden blijven veilig. Als je dual boot gebruikt, delen beide besturingssystemen de gegevenspartities.</p>
+            </div>
+
+            <p onclick="toggleAnswer(3)">Welke Linux distributie moet ik kiezen?</p>
+            <div id="faq-3" class="faq-content">
+                <p>We raden Ubuntu aan voor beginners, maar we kunnen je helpen een keuze te maken op basis van je behoeften.</p>
             </div>
         </section>
 
         <section class="testimonials">
-            <h2 class="section-title">Wat Onze Klanten Zeggen</h2>
-            <div class="testimonial">
+            <h2>Wat Onze Klanten Zeggen</h2>
+            <div class="testimonial active">
                 <h3>John Doe</h3>
                 <p>"Ik had geen idee hoe gemakkelijk het zou zijn om over te stappen naar Linux! De service was soepel en professioneel. Zeer aanbevolen!"</p>
             </div>
@@ -167,23 +220,37 @@
             </div>
         </section>
 
-        <section class="faq">
-            <h2 class="section-title">Veelgestelde Vragen</h2>
-            <p><strong>Is mijn laptop compatibel met Linux?</strong><br>De meeste moderne laptops zijn compatibel met Linux. We controleren de specificaties van je laptop voor de installatie.</p>
-            <p><strong>Kan ik Windows nog steeds gebruiken na de installatie?</strong><br>Ja, als je kiest voor een dual-boot setup, kun je bij het opstarten van je laptop kiezen tussen Linux en Windows.</p>
-            <p><strong>Wat gebeurt er met mijn bestanden?</strong><br>Je bestanden blijven veilig. Als je dual boot gebruikt, delen beide besturingssystemen de gegevenspartities.</p>
-            <p><strong>Welke Linux distributie moet ik kiezen?</strong><br>We raden Ubuntu aan voor beginners, maar we kunnen je helpen een keuze te maken op basis van je behoeften.</p>
-        </section>
-
-        <section id="contact" class="contact-info">
-            <h2 class="section-title">Neem Contact Op</h2>
-            <p>📩 E-mail: contact@linux-ready.nl</p>
-            <p>📞 WhatsApp: +31 XXXXXXXX</p>
+        <section class="linux-logos">
+            <h2>Onze Ondersteunde Linux Distributies</h2>
+            <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="Ubuntu">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_Linux_Mint_Logo.svg/1280px-The_Linux_Mint_Logo.svg.png" alt="Linux Mint">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pop_OS-Logo-nobg.svg/1280px-Pop_OS-Logo-nobg.svg.png" alt="Pop!_OS">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Archlinux-logo-standard-version.svg" alt="Arch Linux">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Fedora_logo_%282021%29.svg/1280px-Fedora_logo_%282021%29.svg.png" alt="Fedora">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/1024px-Debian-OpenLogo.svg.png" alt="Debian">
         </section>
     </div>
 
     <div class="footer">
         <p>© 2025 Linux-Ready.nl - Jouw Linux Migratie Expert</p>
     </div>
+
+    <script>
+        // Toggle FAQ answer visibility
+        function toggleAnswer(id) {
+            const answer = document.getElementById(`faq-${id}`);
+            answer.style.display = answer.style.display === "none" || answer.style.display === "" ? "block" : "none";
+        }
+
+        // Testimonial scrolling
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        setInterval(() => {
+            testimonials[currentTestimonial].classList.remove('active');
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            testimonials[currentTestimonial].classList.add('active');
+        }, 5000); // Change every 5 seconds
+    </script>
 </body>
 </html>
