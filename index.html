@@ -1,5 +1,4 @@
-# Updating the HTML to include a section for Linux distribution logos
-html_content_with_logos = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -188,12 +187,3 @@ html_content_with_logos = """<!DOCTYPE html>
     </div>
 </body>
 </html>
-"""
-
-# Save the updated HTML content with logos section
-final_with_logos_path = "/mnt/data/linux-ready-with-logos.zip"
-
-with zipfile.ZipFile(final_with_logos_path, "w") as zipf:
-    zipf.writestr("index.html", html_content_with_logos)
-
-final_with_logos_path
