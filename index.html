@@ -16,7 +16,7 @@
             background-color: #222;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 40px 0;
         }
         .container {
             max-width: 800px;
@@ -28,6 +28,24 @@
         }
         h1, h2 {
             text-align: center;
+        }
+        .cta-button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .cta-button:hover {
+            background-color: #005bb5;
+        }
+        .section-title {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 24px;
         }
         .pricing {
             display: flex;
@@ -41,9 +59,14 @@
             text-align: center;
             width: 30%;
         }
-        .contact {
+        .pricing h3 {
+            margin-top: 0;
+        }
+        .faq, .contact-info {
+            margin-top: 30px;
+        }
+        .faq p, .contact-info p {
             text-align: center;
-            margin-top: 20px;
         }
         .footer {
             text-align: center;
@@ -52,21 +75,29 @@
             color: white;
             margin-top: 20px;
         }
+        .why-linux {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Linux-Ready.nl</h1>
         <p>Fast, secure, and hassle-free Linux installations</p>
+        <a href="#contact" class="cta-button">Get Started</a>
     </header>
 
     <div class="container">
-        <h2>Why Switch to Linux?</h2>
-        <p>- No forced updates or slowdowns</p>
-        <p>- More secure and private than Windows</p>
-        <p>- Perfect for everyday use and gaming</p>
+        <section class="why-linux">
+            <h2 class="section-title">Why Switch to Linux?</h2>
+            <p>- No forced updates or slowdowns</p>
+            <p>- More secure and private than Windows</p>
+            <p>- Perfect for everyday use and gaming</p>
+        </section>
 
-        <h2>Our Services</h2>
+        <h2 class="section-title">Our Services</h2>
         <div class="pricing">
             <div>
                 <h3>Basic Install</h3>
@@ -85,9 +116,19 @@
             </div>
         </div>
 
-        <h2>Contact Us</h2>
-        <p class="contact">📩 Email: contact@linux-ready.nl</p>
-        <p class="contact">📞 WhatsApp: +31 XXXXXXXX</p>
+        <section class="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p><strong>Is my laptop compatible with Linux?</strong><br>Most modern laptops are compatible with Linux. We will check your laptop's specifications before installation.</p>
+            <p><strong>Can I still use Windows after installation?</strong><br>Yes, if you opt for a dual-boot setup, you can choose between Linux and Windows when your laptop starts.</p>
+            <p><strong>What happens to my files?</strong><br>Your files will remain safe. If you're using dual boot, both operating systems will share the data partitions.</p>
+            <p><strong>What Linux distribution should I choose?</strong><br>We recommend Ubuntu for beginners, but we can help you choose based on your needs.</p>
+        </section>
+
+        <section id="contact" class="contact-info">
+            <h2 class="section-title">Contact Us</h2>
+            <p>📩 Email: contact@linux-ready.nl</p>
+            <p>📞 WhatsApp: +31 XXXXXXXX</p>
+        </section>
     </div>
 
     <div class="footer">
