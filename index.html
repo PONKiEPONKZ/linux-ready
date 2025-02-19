@@ -3,606 +3,789 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux-Ready.nl - Professionele Linux Installatie Service | Amsterdam</title>
-    <meta name="description" content="Maak de overstap naar Linux simpel en snel met onze professionele installatie service in Amsterdam. Kies uit verschillende Linux distributies en geniet van een sneller en veiliger besturingssysteem. Ophaalservice beschikbaar.">
-    <meta name="keywords" content="Linux, installatie, service, laptop, PC, Windows, Ubuntu, Mint, Pop_OS, dual boot, veiligheid, snelheid, Amsterdam, ophaalservice">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Linux-Ready.nl - Professionele Linux Installatieservice in Nederland</title>
+    <meta name="description" content="Gespecialiseerd in professionele Linux installaties voor laptops en PC's. Wij maken de overstap van Windows naar Linux eenvoudig met onze persoonlijke service in heel Nederland.">
+    <meta name="keywords" content="Linux installatie, Linux migratie, Linux overstap, Ubuntu installatie, Linux Mint, Pop_OS, dual boot setup, Windows alternatief, professionele Linux service, Nederland">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #FF5733;
-            --primary-hover: #FF4511;
+            --primary-color: #4CAF50;
+            --secondary-color: #FF5733;
+            --light-bg: #f8f9fa;
             --dark-bg: #222;
-            --light-bg: #f4f4f4;
-            --card-bg: white;
-            --text-color: #333;
-            --light-text: white;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
             --border-radius: 8px;
-            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            --hover-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-
+        
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
+        
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
         }
-
+        
         /* Navigation */
         nav {
-            background-color: var(--dark-bg);
-            padding: 10px 0;
-            position: sticky;
+            background-color: rgba(34, 34, 34, 0.9);
+            position: fixed;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
         }
-
+        
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
-
+        
         .logo {
-            color: var(--light-text);
-            font-size: 1.5rem;
+            color: white;
             font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
             display: flex;
             align-items: center;
         }
-
+        
         .logo i {
             margin-right: 10px;
             color: var(--primary-color);
         }
-
+        
         .nav-links {
             display: flex;
             list-style: none;
         }
-
+        
         .nav-links li {
-            margin-left: 20px;
+            margin-left: 25px;
         }
-
+        
         .nav-links a {
-            color: var(--light-text);
+            color: white;
             text-decoration: none;
-            transition: color 0.3s;
             font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
         }
-
+        
         .nav-links a:hover {
             color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.1);
         }
-
-        .mobile-menu-btn {
+        
+        .menu-toggle {
             display: none;
-            background: none;
-            border: none;
-            color: var(--light-text);
+            color: white;
             font-size: 1.5rem;
             cursor: pointer;
         }
-
+        
         /* Header */
         header {
             background-color: var(--dark-bg);
-            color: var(--light-text);
+            color: white;
             text-align: center;
-            padding: 80px 20px;
-            background-image: url('DALL·E 2025-02-15 15.36.18 - A sleek, modern, professional home office setup with a calm and inviting atmosphere. A person is working on a laptop, surrounded by minimalistic decor.webp');
+            padding: 120px 20px 80px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('DALL·E 2025-02-15 15.36.18 - A sleek, modern, professional home office setup with a calm and inviting atmosphere. A person is working on a laptop, surrounded by minimalistic decor.webp');
             background-size: cover;
             background-position: center;
-            position: relative;
-            min-height: 500px;
+            background-attachment: fixed;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
         }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
+        
         header h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1.2s;
         }
-
+        
         header p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeIn 1.5s;
         }
-
+        
         .cta-button {
             background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 15px 30px;
+            color: white;
+            padding: 16px 32px;
             border: none;
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             border-radius: var(--border-radius);
-            transition: all 0.3s;
+            transition: var(--transition);
+            margin-top: 30px;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(255, 87, 51, 0.4);
+            animation: fadeInUp 1.8s;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
         }
-
+        
         .cta-button:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 87, 51, 0.5);
+            background-color: #3d8b40;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(76, 175, 80, 0.5);
         }
-
-        /* Main Content */
+        
+        /* Sections */
         .container {
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-
+        
         section {
-            margin-bottom: 60px;
-            background: var(--card-bg);
+            margin: 80px 0;
+            background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 40px;
         }
-
+        
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
             position: relative;
-            padding-bottom: 15px;
         }
-
-        .section-title::after {
+        
+        .section-title:after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            width: 100px;
             height: 4px;
             background-color: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
         }
-
-        /* Order Options */
-        .order-options {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        
+        /* Why Choose Us Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
-
-        .order-option {
-            flex: 1;
-            min-width: 250px;
+        
+        .feature-card {
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px;
             border-radius: var(--border-radius);
-            background-color: var(--light-bg);
             box-shadow: var(--box-shadow);
-            transition: all 0.3s;
+            transition: var(--transition);
+            background-color: white;
         }
-
-        .order-option:hover {
+        
+        .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--hover-shadow);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
-
-        .order-option i {
+        
+        .feature-icon {
             font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
-
-        .order-option h3 {
+        
+        .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
-
-        /* Pricing */
-        .pricing {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .pricing-plan {
-            flex: 1;
-            min-width: 250px;
-            background: var(--light-bg);
-            padding: 30px 25px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: var(--box-shadow);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-plan:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .popular-tag {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            transform: rotate(45deg) translateX(30px) translateY(-15px);
-            width: 150px;
-            text-align: center;
-        }
-
-        .pricing-plan h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 20px 0;
-        }
-
-        .pricing-plan ul {
-            list-style: none;
-            margin: 25px 0;
-            text-align: left;
-        }
-
-        .pricing-plan li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .pricing-plan li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Benefits Section */
-        .benefits {
+        
+        /* How To Order Section */
+        .order-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .benefit-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            min-width: 50px;
+        
+        .order-option {
             text-align: center;
-        }
-
-        .benefit-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        /* Distributions */
-        .distributions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .distro-card {
-            width: 150px;
-            padding: 15px;
-            text-align: center;
-            background: var(--light-bg);
+            padding: 30px 20px;
             border-radius: var(--border-radius);
-            transition: all 0.3s;
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            transition: var(--transition);
+            background-color: white;
+            border: 1px solid #eee;
         }
-
-        .distro-card:hover {
-            transform: scale(1.05);
+        
+        .order-option:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-color);
+        }
+        
+        .order-option i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .order-option h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        /* Services Section */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #eee;
             box-shadow: var(--box-shadow);
         }
-
-        .distro-logo {
-            height: 60px;
-            width: 60px;
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        .price-card.popular {
+            transform: scale(1.05);
+            border-color: var(--primary-color);
         }
-
-        .distro-logo i {
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .price-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .price-card ul {
+            list-style: none;
+            margin: 25px 0;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .price-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-card ul li:before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .price-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .price-button:hover {
+            background-color: #3d8b40;
+            transform: translateY(-3px);
+        }
+        
+        /* Linux Distribution Section */
+        .distributions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .distro-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .distro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .distro-card i {
             font-size: 3rem;
-            color: #333;
+            margin-bottom: 15px;
         }
-
+        
+        .distro-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
         /* FAQ Section */
         .faq-container {
             max-width: 800px;
-            margin: 40px auto 0;
+            margin: 40px auto;
         }
-
+        
         .faq-item {
             margin-bottom: 20px;
             border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: white;
         }
-
+        
         .faq-question {
-            background-color: var(--light-bg);
-            padding: 15px 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
             cursor: pointer;
+            position: relative;
+            font-weight: 600;
+            transition: var(--transition);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            transition: all 0.3s;
         }
-
+        
         .faq-question:hover {
-            background-color: #e0e0e0;
+            background-color: #eeeeee;
         }
-
+        
         .faq-question i {
-            transition: transform 0.3s;
+            transition: var(--transition);
         }
-
-        .faq-item.active .faq-question i {
+        
+        .faq-question.active i {
             transform: rotate(180deg);
         }
-
+        
         .faq-answer {
-            background-color: var(--card-bg);
-            padding: 0;
+            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: max-height 0.3s ease;
         }
-
-        .faq-item.active .faq-answer {
+        
+        .faq-answer.active {
             padding: 20px;
-            max-height: 1000px;
+            max-height: 300px;
         }
-
+        
+        /* Testimonials Section */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: """;
+            font-size: 4rem;
+            color: rgba(76, 175, 80, 0.2);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: serif;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #eee;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-info p {
+            margin: 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
         /* Contact Section */
-        .contact-section {
+        .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-top: 40px;
         }
-
+        
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            padding-right: 20px;
         }
-
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 15px;
+            margin-bottom: 15px;
         }
-
+        
         .contact-item i {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--primary-color);
-            min-width: 30px;
+            margin-right: 15px;
+            width: 25px;
         }
-
+        
         .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
-
+        
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            margin-bottom: 20px;
         }
-
+        
         .form-group label {
-            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
-
+        
         .form-control {
+            width: 100%;
             padding: 12px 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-size: 1rem;
+            transition: var(--transition);
         }
-
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
         }
-
+        
         .submit-btn {
             background-color: var(--primary-color);
-            color: var(--light-text);
+            color: white;
+            padding: 12px 25px;
             border: none;
-            padding: 15px;
-            border-radius: var(--border-radius);
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: inline-block;
         }
-
+        
         .submit-btn:hover {
-            background-color: var(--primary-hover);
+            background-color: #3d8b40;
         }
-
+        
         /* Footer */
         footer {
             background-color: var(--dark-bg);
-            color: var(--light-text);
-            padding: 40px 0 20px;
+            color: white;
+            padding: 60px 0 30px;
         }
-
+        
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
-            padding: 0 20px;
         }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
+        
+        .footer-logo {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-
-        .footer-col h3::after {
+        
+        .footer-title:after {
             content: '';
             position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-color);
+            border-radius: 2px;
         }
-
-        .footer-col ul {
+        
+        .footer-links {
             list-style: none;
         }
-
-        .footer-col ul li {
+        
+        .footer-links li {
             margin-bottom: 10px;
         }
-
-        .footer-col ul li a {
+        
+        .footer-links a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
-
-        .footer-col ul li a:hover {
+        
+        .footer-links a:hover {
             color: var(--primary-color);
+            padding-left: 5px;
         }
-
+        
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
+        
         .social-links a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: #333;
-            color: var(--light-text);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: all 0.3s;
+            color: white;
+            transition: var(--transition);
         }
-
+        
         .social-links a:hover {
             background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #3d8b40;
             transform: translateY(-5px);
         }
-
-        .copyright {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
+        
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        /* Responsive Design */
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            header h1 {
-                font-size: 2.8rem;
+            .section-title {
+                font-size: 1.8rem;
             }
             
-            .pricing-plan, .order-option {
-                min-width: calc(50% - 20px);
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+            
+            .price-card.popular {
+                transform: scale(1);
             }
         }
-
+        
         @media (max-width: 768px) {
-            .mobile-menu-btn {
+            .menu-toggle {
                 display: block;
             }
             
             .nav-links {
                 position: fixed;
-                top: 60px;
+                top: 70px;
                 left: 0;
-                background-color: var(--dark-bg);
-                width: 100%;
+                right: 0;
+                background-color: rgba(34, 34, 34, 0.95);
                 flex-direction: column;
                 align-items: center;
                 padding: 20px 0;
-                transform: translateY(-100%);
-                transition: transform 0.3s;
-                opacity: 0;
+                clip-path: circle(0% at top right);
+                transition: all 0.4s ease-out;
                 pointer-events: none;
             }
             
             .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
+                clip-path: circle(150% at top right);
                 pointer-events: all;
             }
             
@@ -610,48 +793,43 @@
                 margin: 15px 0;
             }
             
-            header h1 {
-                font-size: 2.2rem;
+            header {
+                padding: 80px 20px 60px;
+                min-height: 80vh;
             }
             
-            .section-title {
+            header h1 {
                 font-size: 2rem;
             }
             
-            .pricing-plan, .order-option {
-                min-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 60px 15px;
-                min-height: 400px;
-            }
-            
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            .cta-button {
-                padding: 12px 20px;
-                font-size: 1rem;
+            .contact-info {
+                padding-right: 0;
             }
             
             section {
-                padding: 30px 15px;
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 20px;
             }
             
             .section-title {
-                font-size: 1.7rem;
+                font-size: 1.5rem;
             }
             
-            .pricing .price {
-                font-size: 2rem;
+            .feature-card, .testimonial, .price-card {
+                padding: 20px 15px;
+            }
+            
+            .back-to-top {
+                right: 15px;
+                bottom: 15px;
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -660,203 +838,151 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
-                <i class="fab fa-linux"></i>
-                <span>Linux-Ready.nl</span>
-            </div>
-            <button class="mobile-menu-btn" id="menuToggle">
+            <a href="#" class="logo">
+                <i class="fas fa-terminal"></i>
+                Linux-Ready.nl
+            </a>
+            <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#diensten">Diensten</a></li>
-                <li><a href="#voordelen">Voordelen</a></li>
-                <li><a href="#distributies">Distributies</a></li>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">Over Ons</a></li>
+                <li><a href="#services">Diensten</a></li>
+                <li><a href="#order">Bestellen</a></li>
+                <li><a href="#distributions">Linux Opties</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header id="home">
-        <div class="header-content">
-            <h1>Maak Vandaag Nog de Overstap naar Linux</h1>
-            <p>Is je laptop langzaam? Heb je een oude pc liggen die je nieuw leven wilt inblazen? Of ben je gewoon klaar om Windows achter je te laten? Wij maken de overstap naar Linux simpel, snel en probleemloos. Met onze professionele installatie-service heb je je apparaat in no time klaar voor gebruik, vol met alle tools die je nodig hebt.</p>
-            <a href="#diensten" class="cta-button">Start nu je Linux avontuur!</a>
-        </div>
+    <!-- Hero Section -->
+    <header>
+        <h1>Maak De Overstap Naar Linux Eenvoudig</h1>
+        <p>Is je laptop langzaam? Heb je een oude pc liggen die je nieuw leven wilt inblazen? Of ben je gewoon klaar om Windows achter je te laten? Wij maken de overstap naar Linux simpel, snel en probleemloos.</p>
+        <a href="#contact" class="cta-button">Start Nu Je Linux Avontuur!</a>
     </header>
 
     <div class="container">
-        <!-- Order Process Section -->
-        <section id="bestellen">
-            <h2 class="section-title">Hoe Bestellen?</h2>
-            <div class="order-options">
-                <div class="order-option">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Breng je laptop langs</h3>
-                    <p>Kom langs op onze locatie in Amsterdam en we installeren Linux terwijl je wacht. Geniet van een gratis kop koffie tijdens het wachten.</p>
-                    <a href="#contact" class="cta-button" style="margin-top: 20px; font-size: 1rem; padding: 10px 15px;">Afspraak maken</a>
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">Waarom Overstappen Naar Linux?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt feature-icon"></i>
+                    <h3>Snellere Prestaties</h3>
+                    <p>Linux gebruikt minder systeembronnen dan Windows, waardoor je computer sneller opstart en programma's vlotter werken. Zelfs oudere computers krijgen een tweede leven.</p>
                 </div>
-                <div class="order-option">
-                    <i class="fas fa-truck"></i>
-                    <h3>Ophaalservice</h3>
-                    <p>We halen je laptop of pc op binnen de regio Amsterdam (20km) en brengen hem binnen 48 uur terug met Linux geïnstalleerd en gebruiksklaar.</p>
-                    <a href="#contact" class="cta-button" style="margin-top: 20px; font-size: 1rem; padding: 10px 15px;">Ophaalservice aanvragen</a>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Verbeterde Veiligheid</h3>
+                    <p>Linux is inherent veiliger tegen virussen en malware. Regelmatige beveiligingsupdates worden automatisch geïnstalleerd om je systeem te beschermen.</p>
                 </div>
-                <div class="order-option">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Stuur je laptop op</h3>
-                    <p>Stuur je laptop naar ons op en we sturen hem binnen 3-5 werkdagen terug met Linux geïnstalleerd en geconfigureerd volgens jouw wensen.</p>
-                    <a href="#contact" class="cta-button" style="margin-top: 20px; font-size: 1rem; padding: 10px 15px;">Verzendlabel aanvragen</a>
+                <div class="feature-card">
+                    <i class="fas fa-euro-sign feature-icon"></i>
+                    <h3>Kosteloos & Open Source</h3>
+                    <p>Linux en de meeste software die erop draait zijn gratis. Geen licentiekosten meer en legale toegang tot professionele software voor diverse doeleinden.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf feature-icon"></i>
+                    <h3>Milieuvriendelijk</h3>
+                    <p>Door een oud apparaat te upgraden met Linux in plaats van een nieuw te kopen, help je elektronisch afval te verminderen en draag je bij aan een groenere planeet.</p>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="diensten">
-            <h2 class="section-title">Onze Diensten</h2>
+        <section id="services" class="services">
+            <h2 class="section-title">Onze Linux Installatiediensten</h2>
             <div class="pricing">
-                <div class="pricing-plan">
+                <div class="price-card">
                     <h3>Basis Installatie</h3>
-                    <div class="price">€40</div>
+                    <span class="price-amount">€40</span>
                     <ul>
-                        <li>Linux distributie naar keuze</li>
-                        <li>Basisapplicaties geïnstalleerd</li>
-                        <li>Browser en essentiële tools</li>
+                        <li>Linux installatie naar keuze</li>
                         <li>Basis configuratie</li>
+                        <li>Essentiële software</li>
+                        <li>Datamigratie tot 20GB</li>
                         <li>30 dagen ondersteuning</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Nu bestellen</a>
+                    <a href="#contact" class="price-button">Selecteer</a>
                 </div>
-                <div class="pricing-plan">
-                    <div class="popular-tag">Populair</div>
+                
+                <div class="price-card popular">
+                    <span class="popular-badge">Populair</span>
                     <h3>Dual Boot Setup</h3>
-                    <div class="price">€60</div>
+                    <span class="price-amount">€60</span>
                     <ul>
-                        <li>Linux naast Windows behouden</li>
-                        <li>Alle functies van Basis Installatie</li>
-                        <li>Gedeelde bestanden configureren</li>
-                        <li>Boot menu configuratie</li>
+                        <li>Linux naast Windows installeren</li>
+                        <li>Veilige partitionering</li>
+                        <li>Aangepaste configuratie</li>
+                        <li>Datamigratie tot 50GB</li>
                         <li>60 dagen ondersteuning</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Nu bestellen</a>
+                    <a href="#contact" class="price-button">Selecteer</a>
                 </div>
-                <div class="pricing-plan">
+                
+                <div class="price-card">
                     <h3>Geavanceerde Installatie</h3>
-                    <div class="price">€100</div>
+                    <span class="price-amount">€100</span>
                     <ul>
-                        <li>Alle functies van Dual Boot</li>
-                        <li>Volledig aangepaste setup</li>
-                        <li>Professionele software-installatie</li>
-                        <li>Persoonlijke training (1 uur)</li>
+                        <li>Premium Linux-distributie</li>
+                        <li>Volledig aangepaste configuratie</li>
+                        <li>Professionele softwaresuite</li>
+                        <li>Onbeperkte datamigratie</li>
                         <li>90 dagen premium ondersteuning</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Nu bestellen</a>
+                    <a href="#contact" class="price-button">Selecteer</a>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section id="voordelen">
-            <h2 class="section-title">Waarom Overstappen naar Linux?</h2>
-            <div class="benefits">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Verbeterde Prestaties</h3>
-                        <p>Linux draait aanzienlijk sneller dan Windows, vooral op oudere hardware. Je kunt je oude laptop weer als nieuw laten aanvoelen.</p>
-                    </div>
+        <!-- How To Order Section -->
+        <section id="order" class="order">
+            <h2 class="section-title">Hoe Werkt Het?</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Breng je laptop langs</h3>
+                    <p>Kom langs op onze locatie in Amsterdam of Utrecht en we installeren Linux terwijl je wacht. Meestal klaar binnen 1-2 uur.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Verbeterde Veiligheid</h3>
-                        <p>Linux is inherent veiliger dan Windows en minder vatbaar voor virussen en malware. Je hoeft je geen zorgen meer te maken over dure antivirussoftware.</p>
-                    </div>
+                <div class="order-option">
+                    <i class="fas fa-truck"></i>
+                    <h3>Ophaalservice</h3>
+                    <p>We halen je laptop op en brengen hem terug met Linux geïnstalleerd. Beschikbaar in heel Nederland met een levertijd van 2-3 werkdagen.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-euro-sign"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Gratis Software</h3>
-                        <p>Linux en de meeste Linux-software zijn volledig gratis. Bespaar honderden euro's op licenties voor besturingssystemen en software.</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Aanpasbaarheid</h3>
-                        <p>Linux biedt ongeëvenaarde aanpassingsmogelijkheden. Pas je bureaublad en workflow aan naar jouw exacte behoeften en voorkeuren.</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Privacy Gerespecteerd</h3>
-                        <p>Linux verzamelt geen gegevens zoals Windows dat doet. Jouw computer blijft van jou, zonder verborgen telemetrie of dataverzameling.</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-sync"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Stabiele Updates</h3>
-                        <p>Linux-updates zijn minder opdringerig en veroorzaken zelden problemen. Geen gedwongen herstart meer midden in je werk.</p>
-                    </div>
+                <div class="order-option">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Stuur je laptop op</h3>
+                    <p>Stuur je laptop naar ons op en we sturen hem terug met Linux geïnstalleerd. Veilig verpakt en verzekerd tijdens transport.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Distributions Section -->
-        <section id="distributies">
-            <h2 class="section-title">Populaire Linux Distributies</h2>
-            <p style="text-align: center; margin-bottom: 30px;">We installeren de Linux-distributie die het beste bij jouw behoeften past. Hier zijn onze meest populaire opties:</p>
+        <!-- Linux Distributions Section -->
+        <section id="distributions">
+            <h2 class="section-title">Linux Distributies</h2>
+            <p class="text-center">We installeren verschillende Linux-distributies op basis van jouw behoeften en voorkeuren. Hier zijn enkele populaire opties:</p>
             <div class="distributions">
                 <div class="distro-card">
-                    <div class="distro-logo">
-                        <i class="fab fa-ubuntu"></i>
-                    </div>
+                    <i class="fab fa-ubuntu" style="color: #E95420;"></i>
                     <h3>Ubuntu</h3>
-                    <p>Gebruiksvriendelijk en perfect voor beginners</p>
+                    <p>Gebruiksvriendelijk en perfect voor beginners. Uitgebreide software-ondersteuning en grote community.</p>
                 </div>
                 <div class="distro-card">
-                    <div class="distro-logo">
-                        <i class="fab fa-linux"></i>
-                    </div>
+                    <i class="fas fa-leaf" style="color: #87CF3E;"></i>
                     <h3>Linux Mint</h3>
-                    <p>Vertrouwde interface voor Windows-gebruikers</p>
+                    <p>Vertrouwde interface voor Windows-gebruikers. Stabiel, elegant en eenvoudig te gebruiken.</p>
                 </div>
                 <div class="distro-card">
-                    <div class="distro-logo">
-                        <i class="fab fa-linux"></i>
-                    </div>
+                    <i class="fas fa-rocket" style="color: #48B9C7;"></i>
                     <h3>Pop!_OS</h3>
-                    <p>Geoptimaliseerd voor creatief werk en gaming</p>
+                    <p>Geoptimaliseerd voor creatieve professionals en gamers. Modern design met krachtige functies.</p>
                 </div>
                 <div class="distro-card">
-                    <div class="distro-logo">
-                        <i class="fab fa-fedora"></i>
-                    </div>
-                    <h3>Fedora</h3>
-                    <p>Moderne functies en nieuwste technologieën</p>
-                </div>
-                <div class="distro-card">
-                    <div class="distro-logo">
-                        <i class="fab fa-linux"></i>
-                    </div>
-                    <h3>Zorin OS</h3>
-                    <p>Ontworpen voor een naadloze Windows-transitie</p>
+                    <i class="fas fa-feather-alt" style="color: #1793D1;"></i>
+                    <h3>Arch Linux</h3>
+                    <p>Voor gevorderde gebruikers. Volledig aanpasbaar met rolling release-updates.</p>
                 </div>
             </div>
         </section>
@@ -867,15 +993,338 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        Kan ik nog steeds al mijn Windows-programma's gebruiken? <i class="fas fa-chevron-down"></i>
+                        Kan ik nog steeds mijn belangrijke Windows-programma's gebruiken?
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>De meeste populaire programma's hebben Linux-alternatieven die vaak even goed of beter zijn. Voor specifieke Windows-software kunnen we Wine configureren, waarmee veel Windows-programma's direct op Linux kunnen draaien. In andere gevallen kunnen we een virtuele Windows-machine opzetten, of een dual-boot configuratie waarbij je kunt kiezen tussen Linux en Windows bij het opstarten.</p>
+                        <p>Ja, dat kan op verschillende manieren:</p>
+                        <ul>
+                            <li>Veel Windows-programma's werken via Wine of PlayOnLinux</li>
+                            <li>Met onze dual-boot optie kun je beide besturingssystemen gebruiken</li>
+                            <li>Voor sommige programma's zijn uitstekende Linux-alternatieven beschikbaar</li>
+                            <li>In specifieke gevallen kunnen we virtualisatie opzetten</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        Hoe lang duurt de installatie? <i class="fas fa-chevron-down"></i>
+                        Verlies ik mijn bestanden tijdens de overstap naar Linux?
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Een basis Linux-installatie duurt ongeve
+                        <p>Absoluut niet! We maken altijd eerst een backup van al je belangrijke bestanden. Daarna migreren we je documenten, foto's, video's en andere persoonlijke bestanden naar je nieuwe Linux-systeem. We zorgen ervoor dat alles op de juiste plek staat zodat je direct verder kunt werken.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is Linux moeilijk te leren als ik gewend ben aan Windows?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>De meeste moderne Linux-distributies zijn zeer gebruiksvriendelijk en lijken qua bediening veel op Windows. We selecteren specifiek distributies die gemakkelijk te leren zijn voor nieuwe gebruikers. Daarnaast geven we je een persoonlijke introductie en handleiding bij de installatie, zodat je snel vertrouwd raakt met je nieuwe systeem.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Hoelang duurt een Linux-installatie gemiddeld?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Een basis Linux-installatie duurt ongeveer 1-2 uur. Een dual-boot setup of geavanceerde installatie met datamigratie kan 2-3 uur duren. Als je kiest voor onze ophaal- of verzendservice, kun je rekenen op een totale doorlooptijd van 2-3 werkdagen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Bieden jullie ondersteuning na de installatie?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ja, al onze pakketten bevatten ondersteuning na installatie. Afhankelijk van het gekozen pakket krijg je 30, 60 of 90 dagen gratis ondersteuning via e-mail, telefoon of videogesprek. Daarna bieden we betaalbare onderhoudsabonnementen aan voor doorlopende ondersteuning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2 class="section-title">Wat Onze Klanten Zeggen</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>Na jaren van frustratie met Windows besloot ik over te stappen naar Linux. Linux-Ready maakte dit proces ongelooflijk eenvoudig. Ze hebben Ubuntu geïnstalleerd, al mijn bestanden overgezet en me zelfs geleerd hoe ik alles moet gebruiken. Mijn oude laptop voelt als nieuw!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Marieke van Dam</h4>
+                            <p>Amsterdam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>Als kleine ondernemer zocht ik een betaalbare IT-oplossing. Linux-Ready installeerde Linux Mint op onze kantoorcomputers. De systemen zijn nu sneller, veiliger en we besparen op licentiekosten. De ondersteuning is geweldig - altijd beschikbaar voor vragen.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-info">
+                            <h4>Robert Jansen</h4>
+                            <p>Eigenaar, Lokale Bakkerij</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>Ik wilde mijn oudere ouders helpen met een veiligere computer, maar had zelf niet de technische kennis. Linux-Ready installeerde een gebruiksvriendelijke versie die perfect aansluit bij hun behoeften. Ze merken nauwelijks verschil maar hebben nu een veel veiliger systeem!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>Sandra Vermeulen</h4>
+                            <p>Utrecht</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Neem Contact Met Ons Op</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Vragen of hulp nodig?</h3>
+                    <p>Wij helpen je graag met alle vragen over Linux of onze diensten. Vul het formulier in of neem direct contact met ons op.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hoofdkantoor: Linuxstraat 42, 1234 AB Amsterdam</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+31 (0)20 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@linux-ready.nl</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Ma-Vr: 9:00 - 18:00, Za: 10:00 - 15:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Naam</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefoonnummer</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Gewenste Service</label>
+                            <select id="service" class="form-control" required>
+                                <option value="" selected disabled>Selecteer een service</option>
+                                <option value="basic">Basis Installatie (€40)</option>
+                                <option value="dual-boot">Dual Boot Setup (€60)</option>
+                                <option value="advanced">Geavanceerde Installatie (€100)</option>
+                                <option value="other">Anders / Informatie</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Bericht</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Verstuur Bericht</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-terminal"></i>
+                    Linux-Ready.nl
+                </div>
+                <p>Wij maken de overstap naar Linux eenvoudig en toegankelijk voor iedereen. Met onze professionele installatiediensten en persoonlijke begeleiding ervaar je alle voordelen van Linux zonder technische zorgen.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Snelle Links</h3>
+                <ul>
+                    <li><a href="#about">Over Ons</a></li>
+                    <li><a href="#services">Diensten</a></li>
+                    <li><a href="#distributions">Linux Opties</a></li>
+                    <li><a href="#testimonials">Ervaringen</a></li>
+                    <li><a href="#faq">Veelgestelde Vragen</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Diensten</h3>
+                <ul>
+                    <li><a href="#services">Linux Installatie</a></li>
+                    <li><a href="#services">Dual Boot Setup</a></li>
+                    <li><a href="#services">Data Migratie</a></li>
+                    <li><a href="#services">Linux Training</a></li>
+                    <li><a href="#services">Zakelijke Oplossingen</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-title">Contact</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Linuxstraat 42, 1234 AB Amsterdam</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+31 (0)20 123 4567</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@linux-ready.nl</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Ma-Vr: 9:00 - 18:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Linux-Ready.nl - Alle rechten voorbehouden | <a href="#">Privacybeleid</a> | <a href="#">Algemene Voorwaarden</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.remove('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                
+                // Toggle active class
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+                
+                // Set maxHeight for animation
+                if (answer.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+                
+                // Close other answers
+                faqQuestions.forEach(item => {
+                    if (item !== question) {
+                        item.classList.remove('active');
+                        item.nextElementSibling.classList.remove('active');
+                        item.nextElementSibling.style.maxHeight = '0';
+                    }
+                });
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would normally handle the form submission
+                // For now, just show a success message
+                const formElements = this.elements;
+                for (let i = 0; i < formElements.length; i++) {
+                    formElements[i].disabled = true;
+                }
+                
+                this.innerHTML = `
+                    <div style="text-align: center; padding: 40px 20px;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3>Bedankt voor je bericht!</h3>
+                        <p>We nemen zo snel mogelijk contact met je op, meestal binnen 24 uur.</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
